@@ -1,0 +1,27 @@
+version: '3.2'
+# This environment setup is for LOCAL DEVELOPMENT
+#
+# Volume mappings
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    volumes:
+      - ./app:/app
+      - ./app/requirements.txt:/app/requirements.txt
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
