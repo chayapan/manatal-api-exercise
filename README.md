@@ -32,7 +32,7 @@ https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/
 
 
 Now it is 15:30PM. Done with Step 1 - 3. Except for last two requirements.
-
+Also need to cleanup sensitive system information and put everything in .env file.
 
 # References
 
