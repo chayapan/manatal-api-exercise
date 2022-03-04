@@ -36,6 +36,14 @@ https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/
 Now it is 15:30PM. Done with Step 1 - 3. Except for last two requirements.
 Also need to cleanup sensitive system information and put everything in .env file.
 
+Last commit 16:30PM. Worked through step 1-3. Didn't have time to work on bonus part, but this repo comes with Docker Compose for preview.
+
+### Remaining Points
+
+- Didn't get Pipfile to work as the main package maangement as most work is done with Docker / requirements.txt
+- The .env part was added last minute.
+- No work done on Django Test, which should be a nice addition to this little program.
+
 # References
 
 Django in Docker Compose with PostgreSQL
