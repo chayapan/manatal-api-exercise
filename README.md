@@ -1,5 +1,7 @@
+
 The objective of this exercise is to build APIs with Django.
 While showing coding style and thought process when developing the solution.
+Disclaimer: this is the first time I use DRF.
 
 This README keeps track of incremental development of the project.
 
@@ -43,4 +45,15 @@ Workflow using Pipfile
   https://pypi.org/project/pipenv/
   https://pipenv.pypa.io/en/latest/#install-pipenv-today
   https://pipenv.pypa.io/en/latest/basics/#example-pipenv-workflow
+
 # manatal-api-exercise
+
+Usage:
+
+```docker compose up``` will start development server.
+
+Go to http://127.0.0.1:8000/
+
+To set up admin user, to inside Docker Container and run:
+
+```python3 manage.py createsuperuser --email=demo@mo.de --firstname=demo```

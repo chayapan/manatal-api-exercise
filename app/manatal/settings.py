@@ -8,9 +8,20 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
+
+
+Step 1:
+- env file
+https://alicecampkin.medium.com/how-to-set-up-environment-variables-in-django-f3c4db78c55f
+
 """
 import os
 from pathlib import Path
+import environ
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1k9ouc&vi0j0x07r*a!7%1kxt4v1k4%wtd^(#-wzx!@g=f@yh('
+SECRET_KEY = env(‘SECRET_KEY’)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,12 +86,17 @@ WSGI_APPLICATION = 'manatal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DB Password is also stored in docker-compose for dev environment
+# 'NAME': os.environ.get('POSTGRES_NAME'),
+# 'USER': os.environ.get('POSTGRES_USER'),
+# 'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'NAME': env(‘DATABASE_NAME’),
+        'USER': env(‘DATABASE_USER’),
+        'PASSWORD': env(‘DATABASE_PASS’),
         'HOST': 'db',
         'PORT': 5432,
     }
@@ -132,7 +148,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # See full configuration for DRF at
 # https://www.django-rest-framework.org/
-# 
+#
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.

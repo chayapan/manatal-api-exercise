@@ -9,7 +9,8 @@ Django = "==3.2"
 djangorestframework = ">=3.13.1"
 markdown = ">=3.3.6"
 django-filter = ">=21.1"
-drf-nested-routers = "=0.93.4"
+drf-nested-routers = "==0.93.4"
+django-environ = ">=0"
 
 [dev-packages]
 

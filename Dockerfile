@@ -2,8 +2,8 @@ FROM python:3-slim-buster
 MAINTAINER Chayapan Khannbha <chayapan@gmail.com>
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /app
 COPY app/requirements.txt /app
+WORKDIR /app
 RUN python3 -m pip install -r requirements.txt
 
 # Start a Django Project
