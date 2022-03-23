@@ -12,7 +12,7 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  web:
+  school_api:
     build: .
     volumes:
       - ./app:/app

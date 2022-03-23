@@ -1,7 +1,8 @@
-Django==3.2
-psycopg2-binary>=2.8
-djangorestframework = ">=3.13.1"
-markdown = ">=3.3.6"
-django-filter = ">=21.1"
+Django==4.0
+# psycopg2-binary>=2.8
+psycopg2-binary==2.9.3
+djangorestframework==3.13.1
+markdown>=3.3.6
+django-filter>=21.1
 drf-nested-routers==0.93.4
 django-environ

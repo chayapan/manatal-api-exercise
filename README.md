@@ -23,7 +23,8 @@ Step 1. 10:40AM
 
 
 - psql: SCRAM authentication requires libpq version 10 or above
-- need custom package for PostgreSQL.
+- When bulding Docker image for use in Mac M1: export DOCKER_DEFAULT_PLATFORM=linux/amd64
+see https://stackoverflow.com/questions/62807717/how-can-i-solve-postgresql-scram-authentifcation-problem and https://github.com/psycopg/psycopg2/issues/1360
 
 - add .env for Docker Compose
 ```
