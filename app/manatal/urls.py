@@ -88,7 +88,7 @@ router.register(r'users', UserViewSet)
 router.register(r'students', StudentViewSet)
 router.register(r'schools', SchoolViewSet)
 
-
+git 
 router.register(r'students/<id>', StudentViewSet, basename='students')
 router.register(r'schools/<id>', SchoolViewSet, basename='schools')
 
